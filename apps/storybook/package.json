@@ -1,0 +1,24 @@
+{
+  "name": "@polyconsole/storybook",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "storybook build --output-dir storybook-static",
+    "dev": "storybook dev --port 6006 --no-open",
+    "dev:visual": "storybook dev --host 127.0.0.1 --port 6106 --no-open --ci"
+  },
+  "dependencies": {
+    "@polyconsole/console-ui": "*",
+    "@polyconsole/design-tokens": "*",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "10.5.7",
+    "@storybook/react-vite": "10.5.7",
+    "@types/react-dom": "19.2.4",
+    "storybook": "10.5.7",
+    "vite": "6.4.3"
+  }
+}

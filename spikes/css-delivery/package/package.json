@@ -1,0 +1,12 @@
+{
+  "name": "@polyconsole/console-ui-css-spike",
+  "version": "0.0.0",
+  "description": "Non-published fixture for the Console UI CSS delivery decision",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./styles.css": "./dist/styles.css"
+  }
+}

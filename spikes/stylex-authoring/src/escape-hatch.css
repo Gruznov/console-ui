@@ -1,0 +1,88 @@
+/*
+ * CSS-shaped cases intentionally kept outside StyleX for this spike.
+ *
+ * These are all structural/relational selectors: styling arbitrary child SVGs,
+ * parent :has(), parent-size propagation, table row relationships, and sticky
+ * behavior controlled by an ancestor. They are exactly the cases where plain
+ * CSS remains easier to read than forcing extra React state or context.
+ */
+@layer console.components.escape {
+  [data-stylex-spike-button-content] > svg {
+    width: var(--console-icon-size-sm);
+    height: var(--console-icon-size-sm);
+    flex: 0 0 auto;
+  }
+
+
+  [data-stylex-spike-icon-button] {
+    padding-inline: 0;
+  }
+
+  [data-stylex-spike-icon-button][data-size="sm"] {
+    width: 1.5rem;
+  }
+
+  [data-stylex-spike-icon-button][data-size="md"] {
+    width: var(--console-control-height);
+  }
+
+  [data-stylex-spike-icon-button][data-size="lg"] {
+    width: var(--console-row-min-height);
+  }
+
+  [data-stylex-spike-icon-button][data-size="lg"]
+    [data-stylex-spike-button-content]
+    > svg {
+    width: var(--console-icon-size-md);
+    height: var(--console-icon-size-md);
+  }
+
+  [data-stylex-spike-icon-button][data-pending]
+    [data-stylex-spike-button-content] {
+    display: none;
+  }
+
+  [data-stylex-spike-badge-content] > svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    flex: 0 0 auto;
+  }
+
+  [data-stylex-spike-card-header]:has(> [data-stylex-spike-card-action]) {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  [data-stylex-spike-card][data-size="sm"]
+    [data-stylex-spike-card-section] {
+    padding-inline: var(--console-space-4);
+  }
+
+  [data-stylex-spike-card][data-size="sm"]
+    [data-stylex-spike-card-header][data-separated] {
+    padding-bottom: var(--console-space-4);
+  }
+
+  [data-stylex-spike-card][data-size="sm"]
+    [data-stylex-spike-card-footer][data-separated] {
+    padding-top: var(--console-space-4);
+  }
+
+  [data-stylex-spike-table-body]
+    > [data-stylex-spike-table-row]:last-child,
+  [data-stylex-spike-table-footer] > [data-stylex-spike-table-row] {
+    border-bottom: 0;
+  }
+
+  [data-stylex-spike-table-body] > [data-stylex-spike-table-row]:hover,
+  [data-stylex-spike-table-body]
+    > [data-stylex-spike-table-row][data-state="selected"] {
+    background: var(--console-surface-emphasis);
+  }
+
+  [data-stylex-spike-data-table-frame][data-sticky-header]
+    [data-stylex-spike-table-header] {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+  }
+}

@@ -1,0 +1,183 @@
+.table-story {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: var(--console-space-7);
+  background: oklch(0.94 0.008 245);
+  color: oklch(0.148 0.004 228.8);
+  font-family: var(--console-font-family-sans);
+}
+
+.table-story *,
+.table-story *::before,
+.table-story *::after {
+  box-sizing: border-box;
+}
+
+.table-story__intro,
+.table-story__grid {
+  width: min(100%, 78rem);
+  margin-inline: auto;
+}
+
+.table-story__intro {
+  margin-bottom: var(--console-space-6);
+}
+
+.table-story__intro > span,
+.table-preview__header > div > span {
+  font-size: var(--console-font-size-xs);
+  font-weight: var(--console-font-weight-semibold);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.table-story__intro h1 {
+  margin: var(--console-space-2) 0 0;
+  font-size: 1.45rem;
+  line-height: var(--console-line-height-tight);
+  letter-spacing: -0.025em;
+}
+
+.table-story__intro p {
+  max-width: 58rem;
+  margin: var(--console-space-3) 0 0;
+  font-size: var(--console-font-size-md);
+  line-height: var(--console-line-height-default);
+}
+
+.table-story__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--console-space-5);
+}
+
+.table-preview {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--console-border-default);
+  border-radius: var(--console-radius-lg);
+  background: var(--console-surface-canvas);
+  color: var(--console-text-primary);
+  box-shadow: var(--console-shadow-raised);
+}
+
+.table-preview__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--console-space-4);
+  padding: var(--console-space-5);
+  border-bottom: 1px solid var(--console-border-default);
+  background: var(--console-surface-default);
+}
+
+.table-preview__header h2 {
+  margin: var(--console-space-1) 0 0;
+  font-size: var(--console-font-size-xl);
+  line-height: var(--console-line-height-tight);
+  letter-spacing: -0.02em;
+}
+
+.table-preview__header p {
+  margin: var(--console-space-2) 0 0;
+  color: var(--console-text-muted);
+  font-size: var(--console-font-size-xs);
+  line-height: var(--console-line-height-default);
+}
+
+.table-preview__body {
+  display: grid;
+  gap: var(--console-space-4);
+  min-width: 0;
+  padding: var(--console-space-5);
+}
+
+.table-preview__resource {
+  width: 12rem;
+  white-space: normal;
+}
+
+.table-preview__resource strong,
+.table-preview__resource span {
+  display: block;
+}
+
+.table-preview__resource strong {
+  font-weight: var(--console-font-weight-semibold);
+}
+
+.table-preview__resource span {
+  margin-top: 0.125rem;
+  color: var(--console-text-muted);
+  line-height: var(--console-line-height-tight);
+}
+
+.table-preview__numeric {
+  font-family: var(--console-font-family-mono);
+  font-variant-numeric: var(--console-font-numeric);
+  text-align: right;
+}
+
+.table-preview__action {
+  width: 1%;
+  text-align: right;
+}
+
+.table-preview__contract {
+  display: flex;
+  min-height: 2.25rem;
+  align-items: center;
+  gap: var(--console-space-4);
+  color: var(--console-text-muted);
+  font-size: var(--console-font-size-xs);
+}
+
+.table-preview__contract > div {
+  display: grid;
+  min-width: 0;
+  gap: var(--console-space-1);
+}
+
+.table-preview__contract strong {
+  color: var(--console-text-primary);
+  font-weight: var(--console-font-weight-semibold);
+}
+
+.table-preview__contract span {
+  font-family: var(--console-font-family-mono);
+  font-size: 0.625rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 72rem) {
+  .table-story__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 42rem) {
+  .table-story {
+    padding: var(--console-space-5);
+  }
+
+  .table-preview__body,
+  .table-preview__header {
+    padding: var(--console-space-4);
+  }
+}
+
+@media (max-width: 28rem) {
+  .table-story {
+    padding: var(--console-space-4);
+  }
+
+  .table-preview__contract {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .table-preview__contract [data-console-separator] {
+    width: 100%;
+    height: 1px;
+  }
+}

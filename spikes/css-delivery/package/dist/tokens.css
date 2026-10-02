@@ -1,0 +1,23 @@
+@layer console.tokens {
+  :root {
+    --console-surface-canvas: oklch(0.985 0.002 247.84);
+    --console-surface-panel: oklch(1 0 0);
+    --console-text-primary: oklch(0.21 0.034 264.67);
+    --console-border-subtle: oklch(0.928 0.006 264.53);
+    --console-action-primary: oklch(0.278 0.033 256.85);
+    --console-action-primary-text: oklch(0.985 0.002 247.84);
+    --console-radius-control: 0.5rem;
+    --console-radius-panel: 0.75rem;
+    --console-space-control-x: 0.75rem;
+    --console-space-control-y: 0.5rem;
+  }
+
+  [data-console-color-scheme="dark"] {
+    --console-surface-canvas: oklch(0.145 0.02 264.7);
+    --console-surface-panel: oklch(0.21 0.034 264.67);
+    --console-text-primary: oklch(0.985 0.002 247.84);
+    --console-border-subtle: oklch(0.373 0.034 259.73);
+    --console-action-primary: oklch(0.928 0.006 264.53);
+    --console-action-primary-text: oklch(0.21 0.034 264.67);
+  }
+}

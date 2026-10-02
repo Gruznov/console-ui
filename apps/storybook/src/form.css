@@ -1,0 +1,20 @@
+.form-story-stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-story-panel {
+  display: grid;
+  gap: 1rem;
+  max-width: 44rem;
+  padding: 1rem;
+  border: 1px solid var(--console-border-default);
+  border-radius: var(--console-radius-lg);
+  background: var(--console-surface-canvas);
+  color: var(--console-text-primary);
+}
+
+.form-story-panel > h2 {
+  margin: 0;
+  font-size: var(--console-font-size-lg);
+}

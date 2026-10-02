@@ -1,0 +1,20 @@
+.selection-story-stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.selection-story-panel {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 48rem;
+  padding: 1rem;
+  border: 1px solid var(--console-border-default);
+  border-radius: var(--console-radius-lg);
+  background: var(--console-surface-canvas);
+  color: var(--console-text-primary);
+}
+
+.selection-story-panel > h2 {
+  margin: 0;
+  font-size: var(--console-font-size-lg);
+}
