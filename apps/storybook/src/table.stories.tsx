@@ -12,7 +12,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@polyconsole/console-ui";
+} from "@gruznov/console-ui";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import "./table.css";

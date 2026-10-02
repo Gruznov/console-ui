@@ -56,7 +56,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@polyconsole/console-ui";
+} from "@gruznov/console-ui";
 
 <Table>
   <TableCaption>Queue workers · updated 12 seconds ago</TableCaption>

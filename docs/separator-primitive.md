@@ -9,7 +9,7 @@ Console UI exports:
 - `SeparatorOrientation`.
 
 ```tsx
-import { Separator } from "@polyconsole/console-ui";
+import { Separator } from "@gruznov/console-ui";
 
 <Separator aria-label="Current queue and recent activity" />
 <Separator decorative />

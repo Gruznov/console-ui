@@ -1,18 +1,18 @@
 # ADR 0004: Package distribution
 
-Status: source identity retained; public registry migration pending
+Status: new public identities selected; first registry publication pending
 
 ## Decision
 
-Retain the package names `@polyconsole/design-tokens` and
-`@polyconsole/console-ui` and keep the npm registry as the intended distribution
+Use the new package names `@gruznov/design-tokens` and
+`@gruznov/console-ui` and keep the npm registry as the intended distribution
 channel. Build versioned artifacts from this repository with explicit public
 exports and package-content validation.
 
 The public source snapshot does not change existing npm package visibility or
 trusted-publisher settings. Do not assume a version can be installed publicly
-until registry access and publication have been verified. Existing source
-versions describe the imported baseline, not newly published releases.
+until registry access and publication have been verified. The new source
+versions are release candidates until publication is verified.
 
 ## Release boundary
 
@@ -26,7 +26,8 @@ or their deployments automatically.
 
 ## Consequences
 
-- The repository move does not force an import rename.
+- Consumers must migrate dependencies and imports from `@polyconsole/*` to
+  `@gruznov/*`; existing private registry history stays private.
 - Public source visibility and npm package access are managed separately.
 - Applications adopt explicit versions through their own dependency updates.
 - A release needs registry and publisher verification in addition to passing

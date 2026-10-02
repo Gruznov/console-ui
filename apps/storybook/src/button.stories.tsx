@@ -1,4 +1,4 @@
-import { ActionLink, Button, IconButton } from "@polyconsole/console-ui";
+import { ActionLink, Button, IconButton } from "@gruznov/console-ui";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 

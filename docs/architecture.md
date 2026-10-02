@@ -7,15 +7,15 @@ import from a consumer application.
 
 | Package | Owns | Must not own |
 | --- | --- | --- |
-| `@polyconsole/design-tokens` | Semantic CSS variables, theme values, token metadata | React, application configuration, domain models |
-| `@polyconsole/console-ui` | React components, accessible interactions, shell and layout presentation | Routing, authorization, API clients, polling, deployments |
+| `@gruznov/design-tokens` | Semantic CSS variables, theme values, token metadata | React, application configuration, domain models |
+| `@gruznov/console-ui` | React components, accessible interactions, shell and layout presentation | Routing, authorization, API clients, polling, deployments |
 
 React and React DOM are peer dependencies of the component package. Next.js is
 not a package dependency. Applications supply router adapters, data, commands,
 and providers through ordinary React composition.
 
 The repository lives at `Gruznov/console-ui`. Repository ownership and the
-`@polyconsole` package namespace are separate contracts. See
+`@gruznov` package namespace are separate contracts. See
 [ADR 0001](decisions/0001-repository-and-ownership.md).
 
 ## Workspace
@@ -72,8 +72,8 @@ inventory is documented in [Semantic token schema](token-schema.md).
 Consumers import compiled styles once:
 
 ```css
-@import "@polyconsole/design-tokens/tokens.css";
-@import "@polyconsole/console-ui/styles.css";
+@import "@gruznov/design-tokens/tokens.css";
+@import "@gruznov/console-ui/styles.css";
 ```
 
 The artifact contains no reset, Preflight, Tailwind directives, or unscoped

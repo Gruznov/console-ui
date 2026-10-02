@@ -5,8 +5,8 @@ Status: accepted for the public source snapshot
 ## Decision
 
 Maintain shared source in `Gruznov/console-ui`, independently from consumer
-applications. Preserve the package names `@polyconsole/design-tokens` and
-`@polyconsole/console-ui` so the repository move does not also require changing
+applications. Preserve the package names `@gruznov/design-tokens` and
+`@gruznov/console-ui` so the repository move does not also require changing
 consumer imports.
 
 GitHub repository ownership and npm package identity are separate. Public source

@@ -19,7 +19,7 @@ extraction** while preserving the consumer build contract.
 
 A successful result should preserve all of these:
 
-- `@polyconsole/design-tokens` remains framework-independent;
+- `@gruznov/design-tokens` remains framework-independent;
 - existing `--console-*` semantic variables remain the theming surface;
 - consumers still import a compiled stylesheet once;
 - consumers do not configure a StyleX compiler;

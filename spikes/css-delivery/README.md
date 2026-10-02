@@ -27,8 +27,8 @@ The package fixture uses the same entry-point shape planned for the real
 packages:
 
 ```css
-@import "@polyconsole/design-tokens/tokens.css";
-@import "@polyconsole/console-ui/styles.css";
+@import "@gruznov/design-tokens/tokens.css";
+@import "@gruznov/console-ui/styles.css";
 ```
 
 The local fixture keeps both files in one package only to make the experiment

@@ -52,7 +52,7 @@ This worked. The production build reports:
 - StyleX runtime in emitted component JavaScript: **0 bytes**.
 
 StyleX remains a workspace devDependency rather than a runtime dependency of
-`@polyconsole/console-ui`.
+`@gruznov/console-ui`.
 
 ## Badge validation result
 

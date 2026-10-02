@@ -1,5 +1,5 @@
 {
-  "name": "@polyconsole/reference-console",
+  "name": "@gruznov/reference-console",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -8,8 +8,8 @@
     "dev": "vite --host 127.0.0.1 --port 4173"
   },
   "dependencies": {
-    "@polyconsole/console-ui": "*",
-    "@polyconsole/design-tokens": "*",
+    "@gruznov/console-ui": "*",
+    "@gruznov/design-tokens": "*",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },

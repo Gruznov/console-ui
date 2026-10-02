@@ -1,4 +1,4 @@
-import { IconButton, Tooltip } from "@polyconsole/console-ui";
+import { IconButton, Tooltip } from "@gruznov/console-ui";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import "./tooltip.css";

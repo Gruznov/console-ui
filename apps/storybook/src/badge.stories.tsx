@@ -1,5 +1,5 @@
-import type { StatusTone } from "@polyconsole/console-ui";
-import { Badge, StatusBadge } from "@polyconsole/console-ui";
+import type { StatusTone } from "@gruznov/console-ui";
+import { Badge, StatusBadge } from "@gruznov/console-ui";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import "./badge.css";

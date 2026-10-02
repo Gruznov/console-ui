@@ -1,4 +1,4 @@
-# `@polyconsole/design-tokens`
+# `@gruznov/design-tokens`
 
 Framework-independent semantic tokens for operational consoles.
 
@@ -11,7 +11,7 @@ The package is included in the public source workspace. Registry availability
 is configured separately; see the repository README before installing from npm.
 
 ```css
-@import "@polyconsole/design-tokens/tokens.css";
+@import "@gruznov/design-tokens/tokens.css";
 ```
 
 Light is the root default. Explicit theme boundaries support scoped adoption
@@ -40,7 +40,7 @@ environment as visible, accessible text.
 Tooling can inspect the contract without parsing CSS:
 
 ```js
-import inventory from "@polyconsole/design-tokens/token-inventory.json" with {
+import inventory from "@gruznov/design-tokens/token-inventory.json" with {
   type: "json",
 };
 ```

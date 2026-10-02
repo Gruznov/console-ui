@@ -1,7 +1,7 @@
 # StyleX authoring spike
 
 This is an isolated experiment. It does **not** change the stable
-`@polyconsole/console-ui` package or its public styling contract.
+`@gruznov/console-ui` package or its public styling contract.
 
 ## Question
 

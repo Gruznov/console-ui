@@ -6,7 +6,7 @@ import {
   Input,
   Select,
   Textarea,
-} from "@polyconsole/console-ui";
+} from "@gruznov/console-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import "./form.css";

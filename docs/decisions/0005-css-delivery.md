@@ -23,16 +23,16 @@ keep all component selectors package-scoped.
 
 ## Decision
 
-`@polyconsole/console-ui` ships ready-to-import component CSS through:
+`@gruznov/console-ui` ships ready-to-import component CSS through:
 
 ```text
-@polyconsole/console-ui/styles.css
+@gruznov/console-ui/styles.css
 ```
 
-`@polyconsole/design-tokens` independently ships:
+`@gruznov/design-tokens` independently ships:
 
 ```text
-@polyconsole/design-tokens/tokens.css
+@gruznov/design-tokens/tokens.css
 ```
 
 The styling contract is:

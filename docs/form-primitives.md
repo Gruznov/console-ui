@@ -21,7 +21,7 @@ import {
   Input,
   Select,
   Textarea,
-} from "@polyconsole/console-ui";
+} from "@gruznov/console-ui";
 
 <form onSubmit={save}>
   <FormGrid columns={2}>

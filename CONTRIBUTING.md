@@ -66,7 +66,7 @@ Package-facing changes also include a Changesets release intent:
 npm run changeset
 ```
 
-Select only `@polyconsole/design-tokens` and/or `@polyconsole/console-ui`. Choose the
+Select only `@gruznov/design-tokens` and/or `@gruznov/console-ui`. Choose the
 semantic bump from the consumer-visible impact and commit the generated
 Markdown file with the implementation. Documentation-only, Storybook-only,
 test-only, and repository-maintenance changes normally do not need a changeset.

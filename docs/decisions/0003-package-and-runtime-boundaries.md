@@ -6,9 +6,9 @@ Status: accepted
 
 Keep two package boundaries:
 
-- `@polyconsole/design-tokens` provides framework-independent semantic CSS and
+- `@gruznov/design-tokens` provides framework-independent semantic CSS and
   metadata with no React dependency.
-- `@polyconsole/console-ui` provides React components that consume those tokens.
+- `@gruznov/console-ui` provides React components that consume those tokens.
   React and React DOM are peer dependencies.
 
 Shared components must not import Next.js, consumer repositories, runtime data

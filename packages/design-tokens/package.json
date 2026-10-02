@@ -1,6 +1,6 @@
 {
-  "name": "@polyconsole/design-tokens",
-  "version": "0.2.0",
+  "name": "@gruznov/design-tokens",
+  "version": "0.2.1",
   "description": "Framework-independent semantic tokens for shared internal consoles",
   "repository": {
     "type": "git",

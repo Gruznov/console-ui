@@ -1,4 +1,14 @@
-# @polyconsole/design-tokens
+# @gruznov/design-tokens
+
+## 0.2.1
+
+### Patch Changes
+
+- Prepare the first public release under `@gruznov/design-tokens` from the cleaned
+  standalone repository. Existing consumers must migrate package names and imports.
+
+Earlier entries below describe the imported source history, not releases under
+the new npm scope.
 
 ## 0.2.0
 

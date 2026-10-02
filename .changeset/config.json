@@ -6,8 +6,8 @@
   "commit": false,
   "fixed": [],
   "ignore": [
-    "@polyconsole/reference-console",
-    "@polyconsole/storybook"
+    "@gruznov/reference-console",
+    "@gruznov/storybook"
   ],
   "linked": [],
   "privatePackages": {

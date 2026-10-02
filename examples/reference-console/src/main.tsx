@@ -1,9 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import "@polyconsole/design-tokens/tokens.css";
-import "@polyconsole/console-ui";
-import "@polyconsole/console-ui/styles.css";
+import "@gruznov/design-tokens/tokens.css";
+import "@gruznov/console-ui";
+import "@gruznov/console-ui/styles.css";
 
 import { ReferenceConsole } from "./reference-console";
 import "./reference-console.css";
