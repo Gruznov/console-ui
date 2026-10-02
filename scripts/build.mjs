@@ -194,7 +194,7 @@ await writeFile(resolve(consoleUiDistRoot, "styles.css"), finalStyles, "utf8");
 await rm(stylexBuildRoot, { force: true, recursive: true });
 
 console.log(
-  `Built @polyconsole/design-tokens and @polyconsole/console-ui; StyleX entries: ${stylexEntryPoints.length}; runtime: ${stylexRuntimeBytes} bytes.`,
+  `Built @gruznov/design-tokens and @gruznov/console-ui; StyleX entries: ${stylexEntryPoints.length}; runtime: ${stylexRuntimeBytes} bytes.`,
 );
 console.log(
   `StyleX CSS: ${Buffer.byteLength(stylexCss)} bytes; CSS escape files: ${escapeCssFiles.length}; output ${relative(repositoryRoot, resolve(consoleUiDistRoot, "styles.css"))}.`,

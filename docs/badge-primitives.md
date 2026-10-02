@@ -21,7 +21,7 @@ modes, categories, versions, and other compact facts that do not imply health
 or severity.
 
 ```tsx
-import { Badge } from "@polyconsole/console-ui";
+import { Badge } from "@gruznov/console-ui";
 
 <Badge>read only</Badge>
 <Badge>worker-02</Badge>
@@ -36,7 +36,7 @@ leak into the primitive.
 StatusBadge presents an already interpreted state:
 
 ```tsx
-import { StatusBadge } from "@polyconsole/console-ui";
+import { StatusBadge } from "@gruznov/console-ui";
 
 <StatusBadge tone="success">Healthy</StatusBadge>
 <StatusBadge tone="warning">Stale</StatusBadge>
@@ -53,7 +53,7 @@ the label remains explicit.
 Products translate domain states before rendering:
 
 ```tsx
-import { StatusBadge, type StatusTone } from "@polyconsole/console-ui";
+import { StatusBadge, type StatusTone } from "@gruznov/console-ui";
 
 const serviceTone: Record<ServiceState, StatusTone> = {
   active: "success",

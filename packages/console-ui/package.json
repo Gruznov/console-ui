@@ -1,6 +1,6 @@
 {
-  "name": "@polyconsole/console-ui",
-  "version": "0.7.0",
+  "name": "@gruznov/console-ui",
+  "version": "0.7.1",
   "description": "Product-neutral React foundations for shared internal consoles",
   "type": "module",
   "repository": {
@@ -28,7 +28,7 @@
   ],
   "dependencies": {
     "@base-ui/react": "^1.7.0",
-    "@polyconsole/design-tokens": "0.2.0"
+    "@gruznov/design-tokens": "0.2.1"
   },
   "peerDependencies": {
     "react": ">=19.2.0 <20.0.0",

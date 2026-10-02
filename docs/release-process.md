@@ -1,73 +1,111 @@
 # Release Process
 
-Status: public source migration prepared; npm publishing disabled pending setup.
+Status: new public package identities prepared; publishing disabled pending bootstrap.
 
 ## Source and package identity
 
-The source repository is `Gruznov/console-ui`. Package names and source versions
-are preserved during the repository migration:
+The source repository is `Gruznov/console-ui`. The first stable versions planned
+under the new npm user scope are:
 
 ```text
-@polyconsole/design-tokens@0.2.0
-@polyconsole/console-ui@0.7.0
+@gruznov/design-tokens@0.2.1
+@gruznov/console-ui@0.7.1
 ```
 
-These versions identify the imported source baseline. They are not new public
-releases and must not be republished. npm versions are immutable. The cleaned
-source does not change any package already stored in the registry.
+These are release candidates until registry publication is verified. Version
+numbers continue the imported source baseline. Existing `@polyconsole/*` packages
+and their historical versions are not renamed, made public, or republished.
+The root, Storybook, and reference-console workspaces remain private and unpublished.
 
-Package manifests and Changesets are prepared for public npm access. The root,
-Storybook, and reference-console workspaces remain private, unpublished
-workspaces. CI builds and tests them without registry credentials.
+## First publication: package owner bootstrap
 
-## Registry migration: separate owner action
+The GitHub publisher intentionally requires both package names to already be
+public. It cannot bootstrap missing packages. Keep `NPM_PUBLIC_PUBLISH_ENABLED`
+unset or `false` during this procedure. Do not remove that preflight or change
+old package visibility to work around it.
 
-The public repository does not make existing npm packages public. Keep
-`NPM_PUBLIC_PUBLISH_ENABLED` unset or `false` until all setup below is complete.
-CI and local package checks do not change registry settings. Publishing with
-`--access public` can change the visibility of an existing npm package, so the
-release workflow first requires both packages to be readable from the public
-registry without authentication. Private or missing packages fail that check
-before any publication. Change their visibility separately after review.
+After the naming PR is merged and CI passes, the npm account owner performs a
+one-time authenticated publication of real canary artifacts from the reviewed
+`main` commit. A browser login alone does not authenticate the local npm CLI.
+Use a local checkout with Node 24 and npm 11.5.1 or later:
 
-Before enabling releases:
+```sh
+git switch main
+git pull --ff-only
+npm ci
+npm run check
+npm run canary:prepare -- --version 0.7.1-canary.0.1 --output .cache/npm-bootstrap
+npm login --registry=https://registry.npmjs.org/
+npm whoami --registry=https://registry.npmjs.org/
+```
 
-1. Review every previously published version of both packages, including stable
-   and canary tarballs, README files, source maps, repository metadata, and
-   provenance where present. Package visibility applies to the package, so
-   assume that making it public exposes its previous versions too. A clean
-   source snapshot or a clean new version does not sanitize that history.
-2. Decide whether the existing names can safely become public. If older
-   artifacts must remain private, use new package names or a new scope in a
-   separate migration. Keep the publisher disabled while that decision is open.
-3. Have the package owner perform the reviewed visibility change separately.
-   Do not attempt to use a canary publish as a visibility test.
-4. Configure the trusted publisher for **each** package on npmjs.com using the
-   identity below. Retire the previous publisher when the migration is ready.
-5. Create the GitHub `npm-release` environment, restrict it to `main`, and
-   configure required reviewers if desired. Do not copy old registry tokens
-   into the public repository.
-6. Prepare a versioning pull request for both packages. Use new versions for
-   the changed metadata and cleaned package documentation, update the reviewed
-   versions in `scripts/release-check.mjs`, and keep the component package's
-   token dependency exact. Merge only after review and passing CI.
-7. Set the repository Actions variable `NPM_PUBLIC_PUBLISH_ENABLED` to `true`
-   only after the package history, visibility, publisher identity, and new
-   release versions have all been reviewed.
+Confirm that `whoami` prints `gruznov`. Before publishing, inspect both tarballs
+(including `package/package.json`) and confirm the `@gruznov` scope, public
+access, repository metadata, and matching prerelease dependency. The output
+directory must be empty before preparation. These commands do not publish.
 
-The repository migration does not change npm billing, existing consumer
-credentials, or consumer deployments. Keep existing access working until
-consumers have verified installation of their selected public versions.
+The following two commands **do publish public packages** and require explicit
+release approval. Complete any npm browser/2FA challenge locally; do not share
+credentials or OTPs in chat or copy a registry token into GitHub:
 
-See npm's [package visibility documentation](https://docs.npmjs.com/changing-package-visibility/),
+```sh
+npm publish .cache/npm-bootstrap/design-tokens.tgz --tag canary --access public --registry=https://registry.npmjs.org/
+npm publish .cache/npm-bootstrap/console-ui.tgz --tag canary --access public --registry=https://registry.npmjs.org/
+```
+
+Publish tokens first. Check whether the version already exists before retrying:
+a completed upload is immutable. If only the component upload fails, retain the
+successful token release and retry only the missing component. Both canaries use
+`0.7.1-canary.0.1` and the `canary` dist-tag; stable source manifests stay unchanged.
+
+Verify anonymous registry reads and install the exact canary versions into a
+clean consumer without registry credentials. Check the component import and both
+CSS entry points. Then configure the ongoing publisher:
+
+1. On npmjs.com, open Settings for **each new package** and add a GitHub Actions
+   trusted publisher using the identity below. Allow direct `npm publish` (not
+   only staged publishing).
+2. Create the GitHub `npm-release` environment and restrict it to `main`.
+3. Set the repository Actions variable `NPM_PUBLIC_PUBLISH_ENABLED=true` only
+   after the public canary and both trusted publishers have been verified.
+4. Run the manual workflow with `channel=stable` and `stable_package=all` to
+   publish the reviewed stable versions above. Verify versions, dist-tags,
+   contents, and anonymous installation before consumer migration.
+
+The bootstrap is the sole initial manual-publishing exception. Subsequent
+releases use the reviewed OIDC workflow, without long-lived registry write tokens.
+
+## Consumer and billing migration
+
+Update each consumer in its own repository after the stable release is verified:
+
+- Replace `@polyconsole/console-ui` with `@gruznov/console-ui` in dependencies,
+  imports, and bundler configuration; pin the selected stable version.
+- Replace `@polyconsole/design-tokens` with `@gruznov/design-tokens`, including
+  `tokens.css` imports. Regenerate the consumer lockfile with its package manager.
+- Keep the CSS order: tokens first, components second. Component exports, CSS
+  subpaths, and the `--console-*` token prefix do not change.
+- Verify a clean install, production build, and relevant UI checks. Remove old
+  registry credentials only after checking that no other private packages need them.
+- Consumer deployment requires its own approval and is not performed by this repo.
+
+Changing this repository does not change npm billing. The organization owner can
+select `polyconsole` → Billing → Downgrade Plan to stop paid renewal. npm retains
+private-package access until the end of the paid cycle, then disables installation
+and publication of private packages; it does not make them public. Migrate all
+consumers before that boundary. Do not delete the old packages or organization as
+part of this migration.
+
+See npm's [downgrade documentation](https://docs.npmjs.com/downgrading-to-a-free-organization-plan/),
+[scoped public package documentation](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages/),
 [trusted publishing documentation](https://docs.npmjs.com/trusted-publishers/),
 and [publication rules](https://docs.npmjs.com/cli/v11/commands/npm-publish/).
 
 ## Trusted manual publisher
 
-Publication is confined to
-[`npm-canary.yml`](../.github/workflows/npm-canary.yml). Its filename is retained
-because the npm trusted-publisher identity includes it.
+After the initial owner bootstrap, automated publication is confined to
+[`npm-canary.yml`](../.github/workflows/npm-canary.yml). Its filename is part of the npm trusted-publisher identity and must match the
+package settings.
 
 | Setting | Value |
 | --- | --- |

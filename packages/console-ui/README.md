@@ -1,4 +1,4 @@
-# `@polyconsole/console-ui`
+# `@gruznov/console-ui`
 
 Product-neutral React foundations for operational consoles.
 
@@ -31,8 +31,8 @@ The package exports these component families:
 Consumers import package styles once at the application root:
 
 ```css
-@import "@polyconsole/design-tokens/tokens.css";
-@import "@polyconsole/console-ui/styles.css";
+@import "@gruznov/design-tokens/tokens.css";
+@import "@gruznov/console-ui/styles.css";
 ```
 
 ```tsx
@@ -65,7 +65,7 @@ import {
   TabsList,
   TabsTrigger,
   Tooltip,
-} from "@polyconsole/console-ui";
+} from "@gruznov/console-ui";
 
 <Button variant="primary">Run checks</Button>
 

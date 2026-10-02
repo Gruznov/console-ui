@@ -26,7 +26,7 @@ import {
   CardHeader,
   CardTitle,
   StatusBadge,
-} from "@polyconsole/console-ui";
+} from "@gruznov/console-ui";
 
 <Card as="article" aria-labelledby="worker-title">
   <CardHeader separated>

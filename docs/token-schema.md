@@ -33,7 +33,7 @@ This schema defines names and ownership. Values are documented in
   safety-sensitive subset needs separate validation.
 
 The inventory is available to tools and consumers through the package export
-`@polyconsole/design-tokens/token-inventory.json`. Components consume the CSS
+`@gruznov/design-tokens/token-inventory.json`. Components consume the CSS
 variables rather than importing JSON at runtime.
 
 ## Families

@@ -26,8 +26,8 @@ A change is complete only when:
 
 ## Architecture boundaries
 
-- `@polyconsole/design-tokens` is framework-independent.
-- `@polyconsole/console-ui` may depend on React and the token package.
+- `@gruznov/design-tokens` is framework-independent.
+- `@gruznov/console-ui` may depend on React and the token package.
 - Shared packages must not import from product repositories.
 - Shared packages must not contain product API clients, domain models,
   authorization rules, runtime data readers, or deployment code.

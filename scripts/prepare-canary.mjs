@@ -52,12 +52,12 @@ const packageFixtures = [
   {
     artifact: "design-tokens.tgz",
     directory: "packages/design-tokens",
-    name: "@polyconsole/design-tokens",
+    name: "@gruznov/design-tokens",
   },
   {
     artifact: "console-ui.tgz",
     directory: "packages/console-ui",
-    name: "@polyconsole/console-ui",
+    name: "@gruznov/console-ui",
   },
 ];
 
@@ -107,13 +107,13 @@ try {
 
     manifest.version = version;
 
-    if (fixture.name === "@polyconsole/console-ui") {
+    if (fixture.name === "@gruznov/console-ui") {
       assert.match(
-        manifest.dependencies["@polyconsole/design-tokens"],
+        manifest.dependencies["@gruznov/design-tokens"],
         /^\d+\.\d+\.\d+$/u,
         "Console UI must use an exact stable token dependency",
       );
-      manifest.dependencies["@polyconsole/design-tokens"] = version;
+      manifest.dependencies["@gruznov/design-tokens"] = version;
     }
 
     writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);

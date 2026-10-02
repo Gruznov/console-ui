@@ -14,6 +14,6 @@ npm run reference:build
 
 The fixture must continue to import:
 
-- `@polyconsole/design-tokens/tokens.css`;
-- `@polyconsole/console-ui`;
-- `@polyconsole/console-ui/styles.css`.
+- `@gruznov/design-tokens/tokens.css`;
+- `@gruznov/console-ui`;
+- `@gruznov/console-ui/styles.css`.

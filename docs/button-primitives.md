@@ -39,7 +39,7 @@ The API deliberately omits `default`, `outline`, and `link`:
 ## Examples
 
 ```tsx
-import { Button, IconButton } from "@polyconsole/console-ui";
+import { Button, IconButton } from "@gruznov/console-ui";
 
 <Button onClick={runChecks}>Run checks</Button>
 

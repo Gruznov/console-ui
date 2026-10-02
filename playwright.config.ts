@@ -23,7 +23,7 @@ export default defineConfig({
     timezoneId: "UTC",
   },
   webServer: {
-    command: "npm run dev:visual --workspace @polyconsole/storybook",
+    command: "npm run dev:visual --workspace @gruznov/storybook",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
     url: "http://127.0.0.1:6106",

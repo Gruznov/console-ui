@@ -9,7 +9,7 @@ import {
   CardTitle,
   Separator,
   StatusBadge,
-} from "@polyconsole/console-ui";
+} from "@gruznov/console-ui";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import "./separator.css";

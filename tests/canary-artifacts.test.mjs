@@ -71,7 +71,7 @@ test("canary artifacts preserve registry metadata and lock prerelease versions",
     }
 
     assert.equal(
-      consoleUiManifest.dependencies["@polyconsole/design-tokens"],
+      consoleUiManifest.dependencies["@gruznov/design-tokens"],
       version,
     );
     const sourceManifest = JSON.parse(
@@ -81,7 +81,7 @@ test("canary artifacts preserve registry metadata and lock prerelease versions",
       ),
     );
 
-    assert.equal(sourceManifest.version, "0.2.0");
+    assert.equal(sourceManifest.version, "0.2.1");
     assert.equal(
       Object.hasOwn(sourceManifest, "private"),
       false,

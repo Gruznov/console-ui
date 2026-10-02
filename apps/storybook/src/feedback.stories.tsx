@@ -1,4 +1,4 @@
-import { Button, FeedbackState, InlineNotice } from "@polyconsole/console-ui";
+import { Button, FeedbackState, InlineNotice } from "@gruznov/console-ui";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import "./feedback.css";

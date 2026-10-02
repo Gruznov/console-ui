@@ -7,15 +7,14 @@ routing, authentication, APIs, domain models, and deployment.
 
 ## Status
 
-This repository is a public source snapshot. The package names remain
-`@polyconsole/console-ui` and `@polyconsole/design-tokens` so existing imports do
-not need to change. The source manifests currently record versions `0.7.0` and
-`0.2.0`, respectively. These versions describe the imported code baseline; they
-are not a promise that the packages are publicly installable from npm.
+This repository prepares public packages `@gruznov/console-ui@0.7.1` and
+`@gruznov/design-tokens@0.2.1`. Publication remains disabled until the first
+public canary and npm trusted publishers are configured. These source versions
+are release candidates, not a claim that they are already available on npm.
 
-Public npm distribution requires a separate registry and publisher migration.
-See the [release process](docs/release-process.md) before publishing or changing
-package access. Repository visibility does not change npm package visibility.
+Existing consumers of `@polyconsole/*` must update dependencies and imports.
+The old registry packages remain separate and private. See the
+[release process](docs/release-process.md) for first publication and migration.
 
 Storybook is the component workbench. The examples use fictional service
 identities and synthetic operational data. Atlas, Beacon, and Compass in the
@@ -61,8 +60,8 @@ artifacts without publishing them.
 Consumers import the two compiled stylesheets once at their application root:
 
 ```css
-@import "@polyconsole/design-tokens/tokens.css";
-@import "@polyconsole/console-ui/styles.css";
+@import "@gruznov/design-tokens/tokens.css";
+@import "@gruznov/console-ui/styles.css";
 ```
 
 No consumer-side StyleX or Tailwind compilation is required.

@@ -44,14 +44,14 @@ const packageFixtures = [
   {
     directory: "./packages/design-tokens",
     manifestPath: "packages/design-tokens/package.json",
-    name: "@polyconsole/design-tokens",
-    version: "0.2.0",
+    name: "@gruznov/design-tokens",
+    version: "0.2.1",
   },
   {
     directory: "./packages/console-ui",
     manifestPath: "packages/console-ui/package.json",
-    name: "@polyconsole/console-ui",
-    version: "0.7.0",
+    name: "@gruznov/console-ui",
+    version: "0.7.1",
   },
 ];
 
@@ -65,7 +65,7 @@ try {
   assert.equal(
     Object.hasOwn(rootManifest.scripts, "release:publish"),
     false,
-    "publishing must remain confined to the reviewed GitHub workflow",
+    "automated publishing must remain confined to the reviewed GitHub workflow",
   );
 
   assert.equal(changesetConfig.access, "public");
@@ -114,10 +114,8 @@ try {
   }
 
   assert.equal(
-    manifests.get("@polyconsole/console-ui").dependencies[
-      "@polyconsole/design-tokens"
-    ],
-    manifests.get("@polyconsole/design-tokens").version,
+    manifests.get("@gruznov/console-ui").dependencies["@gruznov/design-tokens"],
+    manifests.get("@gruznov/design-tokens").version,
     "Console UI must depend on the exact current token-package version",
   );
   for (const changeset of [
@@ -142,14 +140,8 @@ try {
 
     assert.equal(workspaceManifest.version, "0.0.0");
     assert.equal(workspaceManifest.private, true);
-    assert.equal(
-      workspaceManifest.dependencies["@polyconsole/console-ui"],
-      "*",
-    );
-    assert.equal(
-      workspaceManifest.dependencies["@polyconsole/design-tokens"],
-      "*",
-    );
+    assert.equal(workspaceManifest.dependencies["@gruznov/console-ui"], "*");
+    assert.equal(workspaceManifest.dependencies["@gruznov/design-tokens"], "*");
   }
 
   const workflowDirectory = resolve(repositoryRoot, ".github/workflows");

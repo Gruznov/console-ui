@@ -1,4 +1,15 @@
-# @polyconsole/console-ui
+# @gruznov/console-ui
+
+## 0.7.1
+
+### Patch Changes
+
+- Prepare the first public release under `@gruznov/console-ui` from the cleaned
+  standalone repository. Existing consumers must migrate package names and imports.
+- Depend on `@gruznov/design-tokens@0.2.1`; component exports and styling stay unchanged.
+
+Earlier entries below describe the imported source history, not releases under
+the new npm scope.
 
 ## 0.7.0
 
@@ -61,7 +72,7 @@ that these versions are publicly available from the npm registry.
 ### Patch Changes
 
 - Updated dependencies
-  - @polyconsole/design-tokens@0.2.0
+  - @gruznov/design-tokens@0.2.0
 
 ## 0.1.0
 
@@ -74,4 +85,4 @@ that these versions are publicly available from the npm registry.
 ### Patch Changes
 
 - Updated dependencies
-  - @polyconsole/design-tokens@0.1.0
+  - @gruznov/design-tokens@0.1.0

@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react-vite";
 
-import "@polyconsole/design-tokens/tokens.css";
-import "@polyconsole/console-ui/styles.css";
+import "@gruznov/design-tokens/tokens.css";
+import "@gruznov/console-ui/styles.css";
 
 const preview = {
   parameters: {

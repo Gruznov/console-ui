@@ -1,8 +1,4 @@
-import {
-  ChoiceCard,
-  ChoiceGroup,
-  ProgressSteps,
-} from "@polyconsole/console-ui";
+import { ChoiceCard, ChoiceGroup, ProgressSteps } from "@gruznov/console-ui";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import "./selection.css";

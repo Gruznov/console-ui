@@ -27,7 +27,7 @@ provides tab/list/panel roles, relationships, focus management, arrow-key
 navigation, Home/End behavior, disabled-item handling, and controlled or
 uncontrolled selection. The dependency is an implementation detail:
 
-- consumers import only `@polyconsole/console-ui`;
+- consumers import only `@gruznov/console-ui`;
 - public prop types do not re-export Base UI types;
 - Next.js and router APIs are not dependencies;
 - shared CSS owns the focus and visual treatment.
@@ -94,7 +94,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@polyconsole/console-ui";
+} from "@gruznov/console-ui";
 
 <Tabs defaultValue="overview">
   <TabsList aria-label="Queue worker views">

@@ -98,7 +98,7 @@ test("design tokens stay framework-independent", async () => {
   );
 
   assert.equal(Object.hasOwn(manifest, "private"), false);
-  assert.equal(manifest.version, "0.2.0");
+  assert.equal(manifest.version, "0.2.1");
   assert.equal(manifest.exports["./tokens.css"], "./dist/tokens.css");
   assert.equal(
     manifest.exports["./token-inventory.json"],
@@ -498,7 +498,7 @@ test("console UI exposes ESM, types, and ready-to-import CSS", async () => {
   const sourceMap = await readJson("packages/console-ui/dist/index.js.map");
 
   assert.equal(Object.hasOwn(manifest, "private"), false);
-  assert.equal(manifest.version, "0.7.0");
+  assert.equal(manifest.version, "0.7.1");
   assert.deepEqual(manifest.exports["."], {
     types: "./dist/index.d.ts",
     import: "./dist/index.js",
@@ -508,7 +508,7 @@ test("console UI exposes ESM, types, and ready-to-import CSS", async () => {
   assert.equal(manifest.peerDependencies["react-dom"], ">=19.2.0 <20.0.0");
   assert.equal(manifest.dependencies.next, undefined);
   assert.equal(manifest.dependencies["@base-ui/react"], "^1.7.0");
-  assert.equal(manifest.dependencies["@polyconsole/design-tokens"], "0.2.0");
+  assert.equal(manifest.dependencies["@gruznov/design-tokens"], "0.2.1");
   assert.match(styles, /@layer console\.components\s*\{/);
   assert.doesNotMatch(styles, /@(?:apply|source|tailwind)\b/);
   assert.equal(sourceMap.sourcesContent.length, 1);
@@ -1916,7 +1916,7 @@ test("shared source imports only local modules and approved UI dependencies", as
   const sourceFiles = await readdir(sourceDirectory, { recursive: true });
   const allowedPackages = new Set([
     "@base-ui/react",
-    "@polyconsole/design-tokens",
+    "@gruznov/design-tokens",
     "@stylexjs/stylex",
     "react",
     "react-dom",
@@ -1962,10 +1962,10 @@ test("reference console consumes only public package entry points", async () => 
   );
 
   assert.equal(manifest.private, true);
-  assert.equal(manifest.dependencies["@polyconsole/design-tokens"], "*");
-  assert.equal(manifest.dependencies["@polyconsole/console-ui"], "*");
-  assert.match(source, /@polyconsole\/design-tokens\/tokens\.css/);
-  assert.match(source, /@polyconsole\/console-ui\/styles\.css/);
-  assert.match(source, /import "@polyconsole\/console-ui";/);
+  assert.equal(manifest.dependencies["@gruznov/design-tokens"], "*");
+  assert.equal(manifest.dependencies["@gruznov/console-ui"], "*");
+  assert.match(source, /@gruznov\/design-tokens\/tokens\.css/);
+  assert.match(source, /@gruznov\/console-ui\/styles\.css/);
+  assert.match(source, /import "@gruznov\/console-ui";/);
   assert.doesNotMatch(source, /(?:\.\.\/){2,}packages\//);
 });
