@@ -1,0 +1,33 @@
+@layer console.components {
+  :where([data-console-ui="button"]) {
+    align-items: center;
+    background: var(--console-action-primary);
+    border: 0;
+    border-radius: var(--console-radius-control);
+    color: var(--console-action-primary-text);
+    display: inline-flex;
+    font: inherit;
+    font-weight: 600;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: var(--console-space-control-y) var(--console-space-control-x);
+  }
+
+  :where([data-console-ui="frame"]) {
+    background: var(--console-surface-canvas);
+    color: var(--console-text-primary);
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    min-height: 100%;
+  }
+
+  :where([data-console-ui="frame-sidebar"]) {
+    background: var(--console-surface-panel);
+    border-inline-end: 1px solid var(--console-border-subtle);
+  }
+
+  :where([data-console-ui="frame-content"]) {
+    min-width: 0;
+    padding: 1rem;
+  }
+}

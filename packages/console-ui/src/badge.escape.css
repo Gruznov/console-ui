@@ -1,0 +1,18 @@
+/*
+ * CSS-shaped Badge rules intentionally kept outside StyleX.
+ *
+ * Child SVG sizing depends on arbitrary consumer children. Forced-colors mode
+ * is also clearer as a single package selector than duplicated per-tone
+ * conditions in StyleX.
+ */
+[data-console-badge-content] > svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  flex: 0 0 auto;
+}
+
+@media (forced-colors: active) {
+  [data-console-badge] {
+    border-color: CanvasText;
+  }
+}

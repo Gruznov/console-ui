@@ -1,0 +1,48 @@
+{
+  "name": "@polyconsole/console-ui-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@10.9.0",
+  "engines": {
+    "node": ">=22.12.0 <25",
+    "npm": ">=10.9.0 <13"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "canary:prepare": "node scripts/prepare-canary.mjs",
+    "changeset": "changeset",
+    "check": "biome check . && npm run typecheck && node --test && node scripts/pack-check.mjs && npm run release:check && npm run storybook:build && npm run reference:build",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome lint .",
+    "pack:check": "node scripts/pack-check.mjs",
+    "reference": "npm run dev --workspace @polyconsole/reference-console",
+    "reference:build": "npm run build --workspace @polyconsole/reference-console",
+    "release:check": "node scripts/build.mjs && node scripts/release-check.mjs",
+    "release:status": "changeset status",
+    "release:version": "changeset version",
+    "storybook": "npm run dev --workspace @polyconsole/storybook",
+    "storybook:build": "npm run build --workspace @polyconsole/storybook",
+    "test": "node --test",
+    "test:visual": "playwright test",
+    "typecheck": "node scripts/build.mjs && tsc --project apps/storybook/tsconfig.json --noEmit --pretty false && tsc --project examples/reference-console/tsconfig.json --noEmit --pretty false"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.7",
+    "@changesets/cli": "2.31.0",
+    "@playwright/test": "1.62.1",
+    "@stylexjs/stylex": "0.19.0",
+    "@stylexjs/unplugin": "0.19.0",
+    "@types/node": "22.20.1",
+    "@types/react": "19.2.18",
+    "esbuild": "0.28.1",
+    "react": "19.2.8",
+    "typescript": "5.9.3"
+  }
+}

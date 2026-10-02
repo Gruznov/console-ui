@@ -1,0 +1,63 @@
+/*
+ * CSS-shaped Button rules intentionally kept outside StyleX.
+ *
+ * These rules depend on arbitrary consumer child SVGs, descendant structure,
+ * data attributes owned by the rendered DOM, or global accessibility media
+ * queries. Keeping them as a small escape hatch is clearer than manufacturing
+ * extra React state solely for styling.
+ */
+[data-console-button-content] > svg {
+  width: var(--console-icon-size-sm);
+  height: var(--console-icon-size-sm);
+  flex: 0 0 auto;
+}
+
+[data-console-icon-button] {
+  padding: 0;
+}
+
+[data-console-icon-button][data-size="sm"] {
+  width: 1.5rem;
+}
+
+[data-console-icon-button][data-size="md"] {
+  width: var(--console-control-height);
+}
+
+[data-console-icon-button][data-size="lg"] {
+  width: var(--console-row-min-height);
+}
+
+[data-console-icon-button][data-size="lg"] [data-console-button-content] > svg {
+  width: var(--console-icon-size-md);
+  height: var(--console-icon-size-md);
+}
+
+[data-console-icon-button][data-pending] [data-console-button-content] {
+  display: none;
+}
+
+[data-console-action-control][data-pending] {
+  cursor: progress;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-console-button]:active:not(:disabled) {
+    transform: none;
+  }
+
+  [data-console-button-spinner] {
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  [data-console-button] {
+    border-color: ButtonBorder;
+  }
+
+  [data-console-button]:focus-visible {
+    outline-color: Highlight;
+    box-shadow: none;
+  }
+}

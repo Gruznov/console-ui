@@ -1,0 +1,25 @@
+{
+  "name": "@polyconsole/design-tokens",
+  "version": "0.2.0",
+  "description": "Framework-independent semantic tokens for shared internal consoles",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gruznov/console-ui.git",
+    "directory": "packages/design-tokens"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./token-inventory.json": "./dist/token-inventory.json"
+  },
+  "sideEffects": [
+    "./dist/tokens.css"
+  ]
+}

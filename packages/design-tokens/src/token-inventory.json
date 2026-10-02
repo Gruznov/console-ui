@@ -1,0 +1,560 @@
+{
+  "schemaVersion": 1,
+  "namespace": "console",
+  "cssPrefix": "--console-",
+  "baselineDensity": "compact",
+  "groups": [
+    {
+      "name": "surface",
+      "type": "color",
+      "valueScope": "theme",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "canvas",
+          "description": "Application workspace behind navigation and content."
+        },
+        {
+          "name": "default",
+          "description": "Default content and control surface."
+        },
+        {
+          "name": "raised",
+          "description": "Surface visually separated from its immediate parent."
+        },
+        {
+          "name": "muted",
+          "description": "Quiet grouping or secondary content surface."
+        },
+        {
+          "name": "emphasis",
+          "description": "Selected or deliberately emphasized neutral surface."
+        },
+        {
+          "name": "overlay",
+          "description": "Popover, menu, dialog, or other overlay surface."
+        },
+        {
+          "name": "inverse",
+          "description": "High-contrast surface opposite the active theme."
+        }
+      ]
+    },
+    {
+      "name": "text",
+      "type": "color",
+      "valueScope": "theme",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "primary",
+          "description": "Primary labels, values, and body copy."
+        },
+        {
+          "name": "secondary",
+          "description": "Supporting labels and secondary information."
+        },
+        {
+          "name": "muted",
+          "description": "Low-emphasis metadata that remains readable."
+        },
+        {
+          "name": "disabled",
+          "description": "Text belonging to unavailable controls."
+        },
+        {
+          "name": "inverse",
+          "description": "Text placed on an inverse surface."
+        },
+        {
+          "name": "link",
+          "description": "Navigational text with link affordance."
+        }
+      ]
+    },
+    {
+      "name": "border",
+      "type": "color",
+      "valueScope": "theme",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "subtle",
+          "description": "Quiet separators inside dense layouts."
+        },
+        {
+          "name": "default",
+          "description": "Default boundary for surfaces and controls."
+        },
+        {
+          "name": "strong",
+          "description": "Boundary requiring stronger structural separation."
+        },
+        {
+          "name": "interactive",
+          "description": "Available interactive control boundary."
+        }
+      ]
+    },
+    {
+      "name": "action",
+      "type": "color",
+      "valueScope": "theme",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "primary",
+          "description": "Primary action surface."
+        },
+        {
+          "name": "primary-hover",
+          "description": "Primary action surface on hover."
+        },
+        {
+          "name": "primary-active",
+          "description": "Primary action surface while pressed."
+        },
+        {
+          "name": "primary-foreground",
+          "description": "Content placed on a primary action surface."
+        },
+        {
+          "name": "neutral",
+          "description": "Neutral secondary action surface."
+        },
+        {
+          "name": "neutral-hover",
+          "description": "Neutral secondary action surface on hover."
+        },
+        {
+          "name": "neutral-active",
+          "description": "Neutral secondary action surface while pressed."
+        },
+        {
+          "name": "neutral-foreground",
+          "description": "Content placed on a neutral action surface."
+        },
+        {
+          "name": "danger",
+          "valuesMilestone": "CUI-022",
+          "description": "Destructive or consequential action surface."
+        },
+        {
+          "name": "danger-hover",
+          "valuesMilestone": "CUI-022",
+          "description": "Destructive action surface on hover."
+        },
+        {
+          "name": "danger-active",
+          "valuesMilestone": "CUI-022",
+          "description": "Destructive action surface while pressed."
+        },
+        {
+          "name": "danger-foreground",
+          "valuesMilestone": "CUI-022",
+          "description": "Content placed on a destructive action surface."
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "type": "color",
+      "valueScope": "theme",
+      "valuesMilestone": "CUI-022",
+      "tokens": [
+        {
+          "name": "neutral-text",
+          "description": "Text for an explicitly neutral operational state."
+        },
+        {
+          "name": "neutral-surface",
+          "description": "Surface for an explicitly neutral operational state."
+        },
+        {
+          "name": "neutral-border",
+          "description": "Border for an explicitly neutral operational state."
+        },
+        {
+          "name": "info-text",
+          "description": "Text for an informational operational state."
+        },
+        {
+          "name": "info-surface",
+          "description": "Surface for an informational operational state."
+        },
+        {
+          "name": "info-border",
+          "description": "Border for an informational operational state."
+        },
+        {
+          "name": "success-text",
+          "description": "Text for a confirmed successful or healthy state."
+        },
+        {
+          "name": "success-surface",
+          "description": "Surface for a confirmed successful or healthy state."
+        },
+        {
+          "name": "success-border",
+          "description": "Border for a confirmed successful or healthy state."
+        },
+        {
+          "name": "warning-text",
+          "description": "Text for an impaired or attention-required state."
+        },
+        {
+          "name": "warning-surface",
+          "description": "Surface for an impaired or attention-required state."
+        },
+        {
+          "name": "warning-border",
+          "description": "Border for an impaired or attention-required state."
+        },
+        {
+          "name": "danger-text",
+          "description": "Text for a failed, unsafe, or destructive state."
+        },
+        {
+          "name": "danger-surface",
+          "description": "Surface for a failed, unsafe, or destructive state."
+        },
+        {
+          "name": "danger-border",
+          "description": "Border for a failed, unsafe, or destructive state."
+        }
+      ]
+    },
+    {
+      "name": "focus",
+      "type": "color",
+      "valueScope": "theme",
+      "valuesMilestone": "CUI-022",
+      "tokens": [
+        {
+          "name": "ring",
+          "description": "Visible keyboard focus indicator."
+        },
+        {
+          "name": "offset",
+          "description": "Separation color between a focus ring and its control."
+        }
+      ]
+    },
+    {
+      "name": "service",
+      "type": "color",
+      "valueScope": "context",
+      "valuesMilestone": "CUI-023",
+      "tokens": [
+        {
+          "name": "accent",
+          "description": "Current service identity accent."
+        },
+        {
+          "name": "accent-foreground",
+          "description": "Content placed directly on the current service accent."
+        },
+        {
+          "name": "accent-surface",
+          "description": "Quiet surface carrying current service identity."
+        }
+      ]
+    },
+    {
+      "name": "environment",
+      "type": "color",
+      "valueScope": "context",
+      "valuesMilestone": "CUI-023",
+      "tokens": [
+        {
+          "name": "accent",
+          "description": "Current runtime environment accent."
+        },
+        {
+          "name": "foreground",
+          "description": "Content placed directly on the environment accent."
+        },
+        {
+          "name": "surface",
+          "description": "Quiet surface carrying runtime environment context."
+        },
+        {
+          "name": "border",
+          "description": "Boundary reinforcing runtime environment context."
+        }
+      ]
+    },
+    {
+      "name": "font-family",
+      "type": "fontFamily",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "sans",
+          "description": "Default interface font stack."
+        },
+        {
+          "name": "mono",
+          "description": "Monospace stack for identifiers, logs, and code-like values."
+        }
+      ]
+    },
+    {
+      "name": "font-size",
+      "type": "dimension",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "xs",
+          "description": "Smallest readable metadata size."
+        },
+        {
+          "name": "sm",
+          "description": "Secondary interface text size."
+        },
+        {
+          "name": "md",
+          "description": "Default interface text size."
+        },
+        {
+          "name": "lg",
+          "description": "Compact section-heading size."
+        },
+        {
+          "name": "xl",
+          "description": "Page-heading or prominent metric size."
+        }
+      ]
+    },
+    {
+      "name": "line-height",
+      "type": "number",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "tight",
+          "description": "Line height for compact headings and single-line values."
+        },
+        {
+          "name": "default",
+          "description": "Default line height for interface copy."
+        },
+        {
+          "name": "relaxed",
+          "description": "Line height for longer explanatory copy."
+        }
+      ]
+    },
+    {
+      "name": "font-weight",
+      "type": "fontWeight",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "regular",
+          "description": "Default body weight."
+        },
+        {
+          "name": "medium",
+          "description": "Emphasized label and control weight."
+        },
+        {
+          "name": "semibold",
+          "description": "Heading and prominent-value weight."
+        }
+      ]
+    },
+    {
+      "name": "font",
+      "type": "string",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "numeric",
+          "description": "Numeric feature settings supporting tabular scanning."
+        }
+      ]
+    },
+    {
+      "name": "space",
+      "type": "dimension",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "1",
+          "description": "Smallest spacing step."
+        },
+        {
+          "name": "2",
+          "description": "Extra-small spacing step."
+        },
+        {
+          "name": "3",
+          "description": "Small spacing step."
+        },
+        {
+          "name": "4",
+          "description": "Default spacing step."
+        },
+        {
+          "name": "5",
+          "description": "Medium spacing step."
+        },
+        {
+          "name": "6",
+          "description": "Large spacing step."
+        },
+        {
+          "name": "7",
+          "description": "Extra-large spacing step."
+        },
+        {
+          "name": "8",
+          "description": "Largest standard spacing step."
+        }
+      ]
+    },
+    {
+      "name": "control",
+      "type": "dimension",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "height",
+          "description": "Compact default height for form and action controls."
+        }
+      ]
+    },
+    {
+      "name": "row",
+      "type": "dimension",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "min-height",
+          "description": "Compact minimum height for scan-first data rows."
+        }
+      ]
+    },
+    {
+      "name": "hit-target",
+      "type": "dimension",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "min",
+          "description": "Minimum interactive hit area independent of visual density."
+        }
+      ]
+    },
+    {
+      "name": "icon-size",
+      "type": "dimension",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "sm",
+          "description": "Small inline icon size."
+        },
+        {
+          "name": "md",
+          "description": "Default control icon size."
+        }
+      ]
+    },
+    {
+      "name": "radius",
+      "type": "dimension",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "sm",
+          "description": "Small control and indicator radius."
+        },
+        {
+          "name": "md",
+          "description": "Default surface and control radius."
+        },
+        {
+          "name": "lg",
+          "description": "Prominent container and overlay radius."
+        },
+        {
+          "name": "full",
+          "description": "Pill and circular indicator radius."
+        }
+      ]
+    },
+    {
+      "name": "shadow",
+      "type": "shadow",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "raised",
+          "description": "Subtle elevation for raised surfaces."
+        },
+        {
+          "name": "overlay",
+          "description": "Stronger elevation for overlays."
+        }
+      ]
+    },
+    {
+      "name": "duration",
+      "type": "duration",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "fast",
+          "description": "Fast feedback transition duration."
+        },
+        {
+          "name": "default",
+          "description": "Default interface transition duration."
+        },
+        {
+          "name": "slow",
+          "description": "Deliberate transition duration for larger changes."
+        }
+      ]
+    },
+    {
+      "name": "easing",
+      "type": "cubicBezier",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-021",
+      "tokens": [
+        {
+          "name": "standard",
+          "description": "Default interface transition timing function."
+        }
+      ]
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "valueScope": "foundation",
+      "valuesMilestone": "CUI-022",
+      "tokens": [
+        {
+          "name": "disabled",
+          "description": "Supporting opacity for disabled non-text content."
+        }
+      ]
+    }
+  ]
+}

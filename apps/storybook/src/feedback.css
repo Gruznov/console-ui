@@ -1,0 +1,101 @@
+.feedback-story {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: var(--console-space-6);
+  background: oklch(0.94 0.008 245);
+  color: oklch(0.148 0.004 228.8);
+  font-family: var(--console-font-family-sans);
+}
+
+.feedback-story *,
+.feedback-story *::before,
+.feedback-story *::after {
+  box-sizing: border-box;
+}
+
+.feedback-story__intro,
+.feedback-story__grid {
+  width: min(100%, 86rem);
+  margin-inline: auto;
+}
+
+.feedback-story__intro {
+  margin-bottom: var(--console-space-5);
+}
+
+.feedback-story__intro > span,
+.feedback-preview__header > span {
+  font-size: var(--console-font-size-xs);
+  font-weight: var(--console-font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.feedback-story__intro h1,
+.feedback-preview__header h2 {
+  margin: var(--console-space-2) 0 0;
+  line-height: var(--console-line-height-tight);
+}
+
+.feedback-story__intro h1 {
+  font-size: 1.45rem;
+}
+
+.feedback-story__intro p,
+.feedback-preview__header p {
+  margin: var(--console-space-2) 0 0;
+  line-height: var(--console-line-height-default);
+}
+
+.feedback-story__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--console-space-5);
+}
+
+.feedback-preview {
+  min-width: 0;
+  padding: var(--console-space-5);
+  border: 1px solid var(--console-border-default);
+  border-radius: var(--console-radius-lg);
+  background: var(--console-surface-default);
+  color: var(--console-text-primary);
+  box-shadow: var(--console-shadow-raised);
+}
+
+.feedback-preview__header h2 {
+  font-size: var(--console-font-size-xl);
+}
+
+.feedback-preview__header p {
+  color: var(--console-text-muted);
+  font-size: var(--console-font-size-sm);
+}
+
+.feedback-preview__states,
+.feedback-preview__notices {
+  display: grid;
+  gap: var(--console-space-3);
+  margin-top: var(--console-space-5);
+}
+
+.feedback-preview__notices {
+  padding-top: var(--console-space-5);
+  border-top: 1px solid var(--console-border-subtle);
+}
+
+@media (max-width: 64rem) {
+  .feedback-story__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 42rem) {
+  .feedback-story {
+    padding: var(--console-space-4);
+  }
+
+  .feedback-preview {
+    padding: var(--console-space-4);
+  }
+}

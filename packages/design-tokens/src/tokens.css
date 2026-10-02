@@ -1,0 +1,272 @@
+@layer console.tokens {
+  :root {
+    --console-font-family-sans:
+      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    --console-font-family-mono:
+      ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    --console-font-size-xs: 0.75rem;
+    --console-font-size-sm: 0.8125rem;
+    --console-font-size-md: 0.875rem;
+    --console-font-size-lg: 1rem;
+    --console-font-size-xl: 1.25rem;
+    --console-line-height-tight: 1.2;
+    --console-line-height-default: 1.4;
+    --console-line-height-relaxed: 1.6;
+    --console-font-weight-regular: 400;
+    --console-font-weight-medium: 500;
+    --console-font-weight-semibold: 600;
+    --console-font-numeric: tabular-nums;
+
+    --console-space-1: 0.25rem;
+    --console-space-2: 0.375rem;
+    --console-space-3: 0.5rem;
+    --console-space-4: 0.75rem;
+    --console-space-5: 1rem;
+    --console-space-6: 1.5rem;
+    --console-space-7: 2rem;
+    --console-space-8: 3rem;
+
+    --console-control-height: 2rem;
+    --console-row-min-height: 2.25rem;
+    --console-hit-target-min: 2.75rem;
+    --console-icon-size-sm: 1rem;
+    --console-icon-size-md: 1.25rem;
+
+    --console-radius-sm: 0.375rem;
+    --console-radius-md: 0.5rem;
+    --console-radius-lg: 0.625rem;
+    --console-radius-full: 9999px;
+
+    --console-shadow-raised: 0 1px 2px oklch(0.148 0.004 228.8 / 8%);
+    --console-shadow-overlay: 0 8px 24px oklch(0.148 0.004 228.8 / 16%);
+
+    --console-duration-fast: 100ms;
+    --console-duration-default: 160ms;
+    --console-duration-slow: 240ms;
+    --console-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+    --console-opacity-disabled: 0.62;
+  }
+
+  :root,
+  [data-console-theme="light"] {
+    color-scheme: light;
+
+    --console-surface-canvas: oklch(1 0 0);
+    --console-surface-default: oklch(1 0 0);
+    --console-surface-raised: oklch(1 0 0);
+    --console-surface-muted: oklch(0.963 0.002 197.1);
+    --console-surface-emphasis: oklch(0.963 0.002 197.1);
+    --console-surface-overlay: oklch(1 0 0);
+    --console-surface-inverse: oklch(0.218 0.008 223.9);
+
+    --console-text-primary: oklch(0.148 0.004 228.8);
+    --console-text-secondary: oklch(0.218 0.008 223.9);
+    --console-text-muted: oklch(0.56 0.021 213.5);
+    --console-text-disabled: oklch(0.723 0.014 214.4);
+    --console-text-inverse: oklch(0.987 0.002 197.1);
+    --console-text-link: oklch(0.218 0.008 223.9);
+
+    --console-border-subtle: oklch(0.925 0.005 214.3 / 60%);
+    --console-border-default: oklch(0.925 0.005 214.3);
+    --console-border-strong: oklch(0.723 0.014 214.4);
+    --console-border-interactive: oklch(0.925 0.005 214.3);
+
+    --console-action-primary: oklch(0.218 0.008 223.9);
+    --console-action-primary-hover: oklch(0.275 0.011 216.9);
+    --console-action-primary-active: oklch(0.148 0.004 228.8);
+    --console-action-primary-foreground: oklch(0.987 0.002 197.1);
+    --console-action-neutral: oklch(0.963 0.002 197.1);
+    --console-action-neutral-hover: oklch(0.925 0.005 214.3);
+    --console-action-neutral-active: oklch(0.9 0.007 214.3);
+    --console-action-neutral-foreground: oklch(0.218 0.008 223.9);
+
+    --console-action-danger: oklch(0.56 0.23 27);
+    --console-action-danger-hover: oklch(0.52 0.22 27);
+    --console-action-danger-active: oklch(0.48 0.21 27);
+    --console-action-danger-foreground: oklch(0.987 0.002 197.1);
+
+    --console-status-neutral-text: oklch(0.4 0.01 220);
+    --console-status-neutral-surface: oklch(0.963 0.002 197.1);
+    --console-status-neutral-border: oklch(0.62 0.01 220);
+    --console-status-info-text: oklch(0.52 0.15 250);
+    --console-status-info-surface: oklch(0.96 0.025 250);
+    --console-status-info-border: oklch(0.62 0.1 250);
+    --console-status-success-text: oklch(0.5 0.16 151);
+    --console-status-success-surface: oklch(0.96 0.03 151);
+    --console-status-success-border: oklch(0.62 0.1 151);
+    --console-status-warning-text: oklch(0.45 0.11 70);
+    --console-status-warning-surface: oklch(0.97 0.04 90);
+    --console-status-warning-border: oklch(0.62 0.11 78);
+    --console-status-danger-text: oklch(0.55 0.22 27);
+    --console-status-danger-surface: oklch(0.96 0.03 27);
+    --console-status-danger-border: oklch(0.62 0.12 27);
+
+    --console-focus-ring: oklch(0.55 0.15 250);
+    --console-focus-offset: oklch(1 0 0);
+  }
+
+  [data-console-theme="dark"] {
+    color-scheme: dark;
+
+    --console-surface-canvas: oklch(0.148 0.004 228.8);
+    --console-surface-default: oklch(0.218 0.008 223.9);
+    --console-surface-raised: oklch(0.218 0.008 223.9);
+    --console-surface-muted: oklch(0.275 0.011 216.9);
+    --console-surface-emphasis: oklch(0.275 0.011 216.9);
+    --console-surface-overlay: oklch(0.218 0.008 223.9);
+    --console-surface-inverse: oklch(0.925 0.005 214.3);
+
+    --console-text-primary: oklch(0.987 0.002 197.1);
+    --console-text-secondary: oklch(0.925 0.005 214.3);
+    --console-text-muted: oklch(0.723 0.014 214.4);
+    --console-text-disabled: oklch(0.56 0.021 213.5);
+    --console-text-inverse: oklch(0.218 0.008 223.9);
+    --console-text-link: oklch(0.925 0.005 214.3);
+
+    --console-border-subtle: oklch(1 0 0 / 7%);
+    --console-border-default: oklch(1 0 0 / 10%);
+    --console-border-strong: oklch(1 0 0 / 20%);
+    --console-border-interactive: oklch(1 0 0 / 15%);
+
+    --console-action-primary: oklch(0.925 0.005 214.3);
+    --console-action-primary-hover: oklch(0.987 0.002 197.1);
+    --console-action-primary-active: oklch(0.723 0.014 214.4);
+    --console-action-primary-foreground: oklch(0.218 0.008 223.9);
+    --console-action-neutral: oklch(0.275 0.011 216.9);
+    --console-action-neutral-hover: oklch(0.325 0.011 216.9);
+    --console-action-neutral-active: oklch(0.36 0.011 216.9);
+    --console-action-neutral-foreground: oklch(0.987 0.002 197.1);
+
+    --console-action-danger: oklch(0.704 0.191 22.216);
+    --console-action-danger-hover: oklch(0.75 0.18 22);
+    --console-action-danger-active: oklch(0.65 0.18 22);
+    --console-action-danger-foreground: oklch(0.218 0.008 223.9);
+
+    --console-status-neutral-text: oklch(0.85 0.005 214);
+    --console-status-neutral-surface: oklch(0.275 0.011 216.9);
+    --console-status-neutral-border: oklch(0.58 0.01 216.9);
+    --console-status-info-text: oklch(0.75 0.12 250);
+    --console-status-info-surface: oklch(0.25 0.04 250);
+    --console-status-info-border: oklch(0.55 0.1 250);
+    --console-status-success-text: oklch(0.76 0.14 151);
+    --console-status-success-surface: oklch(0.25 0.04 151);
+    --console-status-success-border: oklch(0.55 0.1 151);
+    --console-status-warning-text: oklch(0.82 0.13 83);
+    --console-status-warning-surface: oklch(0.27 0.045 83);
+    --console-status-warning-border: oklch(0.58 0.1 83);
+    --console-status-danger-text: oklch(0.75 0.16 25);
+    --console-status-danger-surface: oklch(0.26 0.04 25);
+    --console-status-danger-border: oklch(0.55 0.12 25);
+
+    --console-focus-ring: oklch(0.72 0.14 245);
+    --console-focus-offset: oklch(0.218 0.008 223.9);
+  }
+
+  [data-console-service-tone="neutral"] {
+    --console-service-accent: oklch(0.218 0.008 223.9);
+    --console-service-accent-foreground: oklch(0.987 0.002 197.1);
+    --console-service-accent-surface: oklch(0.963 0.002 197.1);
+  }
+
+  [data-console-service-tone="violet"] {
+    --console-service-accent: oklch(0.54 0.18 290);
+    --console-service-accent-foreground: oklch(0.987 0.002 197.1);
+    --console-service-accent-surface: oklch(0.96 0.03 290);
+  }
+
+  [data-console-service-tone="teal"] {
+    --console-service-accent: oklch(0.5 0.13 190);
+    --console-service-accent-foreground: oklch(0.987 0.002 197.1);
+    --console-service-accent-surface: oklch(0.96 0.025 190);
+  }
+
+  [data-console-environment="production"] {
+    --console-environment-accent: oklch(0.54 0.2 350);
+    --console-environment-foreground: oklch(0.987 0.002 197.1);
+    --console-environment-surface: oklch(0.97 0.025 350);
+    --console-environment-border: oklch(0.62 0.11 350);
+  }
+
+  [data-console-environment="staging"] {
+    --console-environment-accent: oklch(0.53 0.14 65);
+    --console-environment-foreground: oklch(0.987 0.002 197.1);
+    --console-environment-surface: oklch(0.97 0.035 80);
+    --console-environment-border: oklch(0.62 0.1 75);
+  }
+
+  [data-console-environment="development"] {
+    --console-environment-accent: oklch(0.52 0.14 220);
+    --console-environment-foreground: oklch(0.987 0.002 197.1);
+    --console-environment-surface: oklch(0.96 0.025 220);
+    --console-environment-border: oklch(0.62 0.08 220);
+  }
+
+  [data-console-environment="local"] {
+    --console-environment-accent: oklch(0.4 0.01 220);
+    --console-environment-foreground: oklch(0.987 0.002 197.1);
+    --console-environment-surface: oklch(0.963 0.002 197.1);
+    --console-environment-border: oklch(0.62 0.01 220);
+  }
+
+  [data-console-theme="dark"][data-console-service-tone="neutral"],
+  [data-console-theme="dark"] [data-console-service-tone="neutral"] {
+    --console-service-accent: oklch(0.925 0.005 214.3);
+    --console-service-accent-foreground: oklch(0.218 0.008 223.9);
+    --console-service-accent-surface: oklch(0.275 0.011 216.9);
+  }
+
+  [data-console-theme="dark"][data-console-service-tone="violet"],
+  [data-console-theme="dark"] [data-console-service-tone="violet"] {
+    --console-service-accent: oklch(0.74 0.13 290);
+    --console-service-accent-foreground: oklch(0.218 0.008 223.9);
+    --console-service-accent-surface: oklch(0.25 0.035 290);
+  }
+
+  [data-console-theme="dark"][data-console-service-tone="teal"],
+  [data-console-theme="dark"] [data-console-service-tone="teal"] {
+    --console-service-accent: oklch(0.76 0.1 190);
+    --console-service-accent-foreground: oklch(0.218 0.008 223.9);
+    --console-service-accent-surface: oklch(0.25 0.03 190);
+  }
+
+  [data-console-theme="dark"][data-console-environment="production"],
+  [data-console-theme="dark"] [data-console-environment="production"] {
+    --console-environment-accent: oklch(0.74 0.14 350);
+    --console-environment-foreground: oklch(0.218 0.008 223.9);
+    --console-environment-surface: oklch(0.26 0.03 350);
+    --console-environment-border: oklch(0.56 0.1 350);
+  }
+
+  [data-console-theme="dark"][data-console-environment="staging"],
+  [data-console-theme="dark"] [data-console-environment="staging"] {
+    --console-environment-accent: oklch(0.78 0.12 75);
+    --console-environment-foreground: oklch(0.218 0.008 223.9);
+    --console-environment-surface: oklch(0.27 0.04 80);
+    --console-environment-border: oklch(0.58 0.09 75);
+  }
+
+  [data-console-theme="dark"][data-console-environment="development"],
+  [data-console-theme="dark"] [data-console-environment="development"] {
+    --console-environment-accent: oklch(0.76 0.1 220);
+    --console-environment-foreground: oklch(0.218 0.008 223.9);
+    --console-environment-surface: oklch(0.25 0.03 220);
+    --console-environment-border: oklch(0.55 0.08 220);
+  }
+
+  [data-console-theme="dark"][data-console-environment="local"],
+  [data-console-theme="dark"] [data-console-environment="local"] {
+    --console-environment-accent: oklch(0.72 0.01 220);
+    --console-environment-foreground: oklch(0.218 0.008 223.9);
+    --console-environment-surface: oklch(0.275 0.011 216.9);
+    --console-environment-border: oklch(0.58 0.01 220);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --console-duration-fast: 0.01ms;
+      --console-duration-default: 0.01ms;
+      --console-duration-slow: 0.01ms;
+    }
+  }
+}
